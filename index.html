@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free session app pass | Jamie Fitness</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://rsms.me/"><link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+:root{--ink:#222326;--ink2:rgba(31,32,37,.6);--ink3:rgba(31,32,37,.38);--cap:#8A8F99;--canvas:#F5F7FB;--card:#EBF0F8;--dark:#1F2025;--hair:#ECEEF2;--blue:#4DA3FF;--green:#8BD42A;--violet:#8C7CF6;--amber:#F5A524;--red:#FF5E3A;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;font-weight:500;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+nav.top{position:sticky;top:12px;z-index:20;display:flex;justify-content:center;margin-top:12px}
+nav.top .pill{display:flex;gap:4px;padding:6px;border-radius:32px;background:rgba(255,255,255,.7);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 16px 40px -18px rgba(30,40,70,.35);overflow-x:auto;max-width:calc(100vw - 24px)}
+nav.top a{white-space:nowrap;padding:9px 14px;border-radius:128px;color:var(--ink);text-decoration:none;font-size:14px;font-weight:600}
+nav.top a:hover{background:var(--card)}
+header.hero{padding:110px 0 70px;text-align:center}
+h1{font-size:clamp(44px,7vw,80px);line-height:1;letter-spacing:-.03em;font-weight:650;margin:0}
+h1 span,h2 span{color:var(--blue)}
+.sub{font-size:clamp(18px,2vw,22px);line-height:1.35;color:var(--ink2);max-width:760px;margin:22px auto 0}
+section{padding:90px 0}
+h2{font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:-.03em;font-weight:650;margin:0 0 14px;text-align:center}
+.lede{font-size:19px;line-height:1.45;color:var(--ink2);max-width:760px;margin:0 auto 46px;text-align:center}
+.card{background:var(--card);border-radius:24px;padding:30px}
+.tile{background:#fff;border-radius:18px;padding:22px;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:880px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.k{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cap);margin:0 0 8px}
+.tile h3{margin:0 0 8px;font-size:22px;letter-spacing:-.02em;font-weight:650}
+.tile p,.tile li{font-size:15.5px;line-height:1.5;color:var(--ink2)}
+.tile ul{padding-left:18px;margin:8px 0 0}
+.big{font-size:56px;font-weight:700;letter-spacing:-.03em;line-height:1}
+/* journey */
+.flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;counter-reset:s}
+@media(max-width:980px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.step{background:#fff;border-radius:18px;padding:18px;position:relative;opacity:0;transform:translateY(28px);filter:blur(8px);transition:all 1s var(--ease)}
+.step.on{opacity:1;transform:none;filter:none}
+.step b{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--dark);color:#EBF0F8;font-size:15px;margin-bottom:12px}
+.step h4{margin:0 0 6px;font-size:17px;letter-spacing:-.01em}
+.step p{margin:0;font-size:14px;line-height:1.45;color:var(--ink2)}
+.branch{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:700px){.branch{grid-template-columns:1fr}}
+.branch .tile{border-left:0}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:1px}
+/* phones */
+.phones{display:flex;gap:18px;overflow-x:auto;padding:10px 4px 26px;scroll-snap-type:x mandatory}
+.phone{flex:0 0 250px;scroll-snap-align:start}
+.phone img{width:250px;border-radius:30px;box-shadow:0 16px 40px -18px rgba(30,40,70,.35);display:block;background:#eef2f8}
+.phone figcaption{font-size:14px;color:var(--ink2);margin-top:10px;line-height:1.4}
+.vid{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap}
+.vid video{width:300px;border-radius:30px;box-shadow:0 16px 40px -18px rgba(30,40,70,.45);background:#000}
+.vid .tile{max-width:440px}
+/* matrix */
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:14.5px}
+th,td{text-align:left;vertical-align:top;padding:14px 14px;border-bottom:1px solid var(--hair);line-height:1.45}
+th{font-size:13px;color:var(--cap);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+td code,.msg{font-family:inherit;background:#fff;border-radius:14px;padding:10px 12px;display:block;color:var(--ink)}
+.tab-row{display:flex;gap:8px;justify-content:center;margin-bottom:22px;flex-wrap:wrap}
+.tab-row button{border:0;border-radius:128px;padding:10px 18px;font:600 15px Inter,sans-serif;background:#F1F3F7;color:var(--ink);cursor:pointer;transition:transform .2s var(--ease)}
+.tab-row button[aria-pressed=true]{background:var(--dark);color:#EBF0F8}
+.tab-row button:hover{transform:scale(1.04)}
+.matrix{overflow-x:auto;background:var(--card);border-radius:24px;padding:10px}
+.dark{background:var(--dark);color:#fff;border-radius:24px;padding:46px 34px}
+.dark h2{color:#fff}.dark .lede{color:rgba(255,255,255,.6)}
+.dark .tile{background:rgba(255,255,255,.06)}.dark .tile h3{color:#fff}.dark .tile p,.dark .tile li{color:rgba(255,255,255,.7)}
+.bar{height:10px;border-radius:6px;background:#E7EBF2;overflow:hidden;margin:8px 0 4px}
+.bar i{display:block;height:100%;border-radius:6px;background:var(--blue);width:0;transition:width 1.4s var(--ease)}
+.note{font-size:13.5px;color:var(--cap);line-height:1.5}
+.btn{display:inline-block;background:var(--dark);color:#EBF0F8;border-radius:128px;padding:12px 20px;font-weight:600;text-decoration:none;transition:transform .2s var(--ease)}
+.btn:hover{transform:scale(1.04)}
+.shots{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.shots img{width:100%;border-radius:16px;box-shadow:0 1px 0 rgba(0,0,0,.03);display:block}
+@media(max-width:880px){.shots{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ok{color:#3b8a12;font-weight:700}.bad{color:#c2410c;font-weight:700}
+footer{padding:60px 0 80px;text-align:center;color:var(--cap);font-size:14px}
+@media(prefers-reduced-motion:reduce){.step{opacity:1;transform:none;filter:none;transition:none}.bar i{transition:none}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="pill">
+<a href="#journey">The journey</a><a href="#watch">Watch it</a><a href="#app">The app</a><a href="#messages">Messages</a><a href="#trainer">Trainers</a><a href="#kickstart">Kickstart</a><a href="#landing">Landing page</a><a href="#showrate">Show rate</a><a href="#checked">How it was checked</a>
+</div></nav>
+
+<header class="hero wrap">
+<h1>Book a free session.<br><span>Get the app first.</span></h1>
+<p class="sub">Everyone who books a free session now gets JF Coach before they come in. Their session, their trainer and their workout are already in it. The rest of the app is right there, locked until they turn up.</p>
+</header>
+
+<section id="journey" class="wrap">
+<h2>How it works</h2>
+<p class="lede">Nothing extra to do for the team. The messages people already get now carry the app, and everything links up by the email they booked with.</p>
+<div class="flow">
+<div class="step"><b>1</b><h4>They book</h4><p>Website, a VA, Ava or a trainer. Same as today.</p></div>
+<div class="step"><b>2</b><h4>Their app is made</h4><p>A JF Coach login on their booking email, linked to the session. Ava puts a starter workout on the day.</p></div>
+<div class="step"><b>3</b><h4>Booking text + email</h4><p>Same messages, plus "Get JF Coach so your session workout is ready" and the link.</p></div>
+<div class="step"><b>4</b><h4>They log in</h4><p>Email, a code, a password. No setup form. The JF Coach film plays once.</p></div>
+<div class="step"><b>5</b><h4>The pass</h4><p>Their session, confirm button, workout, messages, calendar. Everything else: "Unlocks at your free session".</p></div>
+<div class="step"><b>6</b><h4>Reminders</h4><p>Same 3 reminders, worded for what they've done. A tap-to-confirm push goes with each text.</p></div>
+</div>
+<div class="branch">
+<div class="tile"><p class="k"><span class="dot" style="background:var(--green)"></span>They buy the Kickstart</p><h3>"Your app is unlocked."</h3><p>A push and a full-screen moment, then the Kickstart setup form. The welcome email says "I can see you've already set up JF Coach" instead of download steps.</p></div>
+<div class="tile"><p class="k"><span class="dot" style="background:var(--violet)"></span>They say no thanks</p><h3>"JF Coach is yours."</h3><p>The Not Interested email becomes a gift: every feature, forever. A push says the same. They leave the trainer's list and become a normal app member.</p></div>
+</div>
+</section>
+
+<section id="watch" class="wrap">
+<h2>Watch it <span>for real.</span></h2>
+<p class="lede">A real recording of the live app with a test account: log in, the welcome film, the session, the locks, Confirm, then the Kickstart unlock.</p>
+<div class="vid">
+<video src="video/journey.mp4" controls playsinline muted loop preload="metadata" poster="img/app-06-home.webp"></video>
+<div class="tile"><p class="k">The new welcome film</p><h3>Same film, now JF Coach</h3><p>The Spring Kickstart reveal, rebranded: "JF Coach. The Jamie Fitness app." and "Get it free. Download JF Coach." It plays on first login, in the setup form, and leads the video carousel on both landing pages.</p>
+<video src="video/jf-coach-film.mp4" controls playsinline preload="none" poster="img/film-poster.webp" style="width:100%;margin-top:14px;border-radius:18px"></video></div>
+</div>
+</section>
+
+<section id="app" class="wrap">
+<h2>What they see</h2>
+<p class="lede">Open: their session, the session workout, on-demand workouts, a one-off workout, calendar, messages, progress. Locked, in plain sight: JFI, the food scanner and meal guide, the Challenge, the program builder, habits.</p>
+<div class="phones">
+<figure class="phone"><img loading="lazy" src="img/app-04-welcome.webp" alt=""><figcaption>First open: the JF Coach film and their session, once.</figcaption></figure>
+<figure class="phone"><img loading="lazy" src="img/app-06-home.webp" alt=""><figcaption>Home is the session: when, who, Confirm, add to calendar, message the trainer.</figcaption></figure>
+<figure class="phone"><img loading="lazy" src="img/app-07-home-workout.webp" alt=""><figcaption>The workout they'll do, already in the app.</figcaption></figure>
+<figure class="phone"><img loading="lazy" src="img/app-08-home-locks.webp" alt=""><figcaption>The rest of the app, blurred behind a lock with the session time on it.</figcaption></figure>
+<figure class="phone"><img loading="lazy" src="img/app-09-lock-jfi.webp" alt=""><figcaption>Tap a lock: the real screen in the fog, and when it opens.</figcaption></figure>
+<figure class="phone"><img loading="lazy" src="img/app-10-lock-challenge.webp" alt=""><figcaption>The Challenge tab, same idea.</figcaption></figure>
+<figure class="phone"><img loading="lazy" src="img/app-11-lock-nutrition.webp" alt=""><figcaption>Nutrition and the food scanner.</figcaption></figure>
+<figure class="phone"><img loading="lazy" src="img/app-12-training.webp" alt=""><figcaption>Training stays open: on-demand workouts and a one-off workout.</figcaption></figure>
+<figure class="phone"><img loading="lazy" src="img/app-14-confirmed.webp" alt=""><figcaption>One tap confirms. It stamps HubSpot exactly like the text link.</figcaption></figure>
+<figure class="phone"><img loading="lazy" src="img/app-15-unlocked.webp" alt=""><figcaption>Kickstart bought: "Your app is unlocked.", then the setup form.</figcaption></figure>
+</div>
+<div class="grid g3" style="margin-top:20px">
+<div class="tile"><p class="k">After the session</p><h3>"Unlocks with your Kickstart"</h3><p>The locks change their line, and Home asks them to talk to their trainer about the Kickstart.</p></div>
+<div class="tile"><p class="k">Moved or cancelled</p><h3>It follows the booking</h3><p>A moved session moves the card, the trainer and the workout. Cancelled: "Book my free session" goes to the team.</p></div>
+<div class="tile"><p class="k">Already had the app</p><h3>Nothing taken away</h3><p>Spring entrants and past clients keep everything. Only brand-new accounts made from a booking are locked.</p></div>
+</div>
+</section>
+
+<section id="messages" class="wrap">
+<h2>Same messages. <span>Smarter words.</span></h2>
+<p class="lede">No new reminders. Each existing one is worded for two things: have they confirmed, and have they logged in to JF Coach. Confirmed and logged in = no more reminders.</p>
+<div class="tab-row" role="group" aria-label="Which message">
+<button data-m="book" aria-pressed="true">At booking</button><button data-m="t3" aria-pressed="false">3 days before (email)</button><button data-m="t2" aria-pressed="false">2 days before (text)</button><button data-m="t1" aria-pressed="false">Day before (text)</button><button data-m="sd" aria-pressed="false">Same day (text)</button>
+</div>
+<div class="matrix"><table><thead><tr><th style="width:22%">They have...</th><th>What they get</th></tr></thead><tbody id="mt"></tbody></table></div>
+<p class="note" style="text-align:center;margin-top:14px">Every text and email checks again right before it sends, so someone who just confirmed or logged in gets the right one. Texts that go over 2 segments drop the app sentence rather than skip the reminder. A "Still on for Sat?" push goes out with each confirm text to anyone with notifications on, and "See you at 9:00am" about 2 hours before.</p>
+</section>
+
+<section id="trainer" class="wrap">
+<div class="dark">
+<h2>For the trainers</h2>
+<p class="lede">The free-session lead shows in their client list until the session. The workout is ready before they think about it.</p>
+<div class="grid g3">
+<div class="tile"><h3>Ava drafts the workout</h3><p>When the booking lands, a starter full-body session goes on the day in the client's app (machines and dumbbells, 4-5 exercises, 30 minutes).</p></div>
+<div class="tile"><h3>Ava tells them on shift</h3><p>One WhatsApp per trainer, sent in their next working window:</p><p class="msg" style="background:rgba(255,255,255,.08);color:#fff;margin-top:8px">Hey Daniel, I've put a starter workout in the JF Coach app for your free session:<br>- Sam, Sun 18 Oct 9:00am: Seated Leg Press, Machine Seated Chest Press, Cable Seated Row, Machine Seated Shoulder Press<br><br>Want something different? Change it in JF Coach: tap the session in your calendar, then Edit in their app. They see whatever is on the day.</p></div>
+<div class="tile"><h3>Change it in 2 taps</h3><p>The free-session sheet in the trainer app now shows the session workout, whether they've set up the app and whether they confirmed, with "Edit in their app". Ava can answer questions about it on WhatsApp too.</p></div>
+</div>
+</div>
+</section>
+
+<section id="kickstart" class="wrap">
+<h2>Then the Kickstart</h2>
+<p class="lede">The Kickstart setup reminders from the other thread are built in, and they know who already has the app.</p>
+<div class="grid g3">
+<div class="tile"><p class="k">Day after paying</p><h3>Email 1</h3><p><b>Not logged in:</b> "your Kickstart program is waiting" with the download and login steps.<br><b>Logged in, no form:</b> "one step left".<br><b>Came from the free-session app:</b> "Your app is unlocked, I can see you already set up JF Coach."</p></div>
+<div class="tile"><p class="k">3 days later</p><h3>Email 2, the last one</h3><p>Only if the form still isn't done and their Kickstart hasn't started. "Your program isn't built yet."</p></div>
+<div class="tile"><p class="k">Day before the first session</p><h3>One text</h3><p>"See you tomorrow at 6:00pm... open JF Coach and finish the setup form." Or the download version if they never logged in.</p></div>
+</div>
+<p class="note" style="text-align:center;margin-top:14px">One message a day at most, the text wins a clash, status re-checked before every send, finished = no more messages, forward-only from go-live.</p>
+</section>
+
+<section id="landing" class="wrap">
+<h2>The app page</h2>
+<p class="lede">A copy of the Spring Kickstart page built from the same source, about the app instead: store buttons up top, the same trainers, map and reviews, no entry form. Both pages now have a video carousel; a new reveal film is one line in one file.</p>
+<p style="text-align:center;margin:-20px 0 34px"><a class="btn" href="https://jamiefitness.au/app/">jamiefitness.au/app</a></p>
+<div class="shots">
+<img loading="lazy" src="img/landing-00.webp" alt=""><img loading="lazy" src="img/landing-01.webp" alt=""><img loading="lazy" src="img/landing-02.webp" alt=""><img loading="lazy" src="img/landing-03.webp" alt=""><img loading="lazy" src="img/landing-05.webp" alt=""><img loading="lazy" src="img/landing-06.webp" alt="">
+</div>
+<img loading="lazy" src="img/carousel-desktop.webp" alt="" style="width:100%;border-radius:24px;margin-top:20px;box-shadow:0 16px 40px -18px rgba(30,40,70,.35)">
+</section>
+
+<section id="showrate" class="wrap">
+<h2>Will it lift <span>show rate?</span></h2>
+<p class="lede">An honest read against the 15 Oct show-rate research. The true current rate is about 68-72% once late-recorded no-shows are counted.</p>
+<div class="grid g2">
+<div class="tile"><h3>Why it should help</h3><ul>
+<li><b>It makes the session real.</b> A date, a trainer's face and their own workout in their hand. "Changed mind" and no-reason cancels (over half of all cancels) are what this targets.</li>
+<li><b>A reason to turn up.</b> The best parts of the app are visible and locked until the session.</li>
+<li><b>Easier to confirm.</b> A push and an in-app button on top of the text link. People who commit in advance show more (signed pre-screen: 86% vs 64-68%).</li>
+<li><b>A reminder that wasn't there.</b> App users now get a push about 2 hours before. Prospects had no session push before.</li>
+<li><b>Bookings far out.</b> 14+ days out shows at 51%. The app gives them something to hold in between.</li>
+<li><b>Selling.</b> They've seen the product, and the trainer can open their session workout to pitch the Kickstart.</li>
+</ul></div>
+<div class="tile"><h3>What it won't fix</h3><ul>
+<li><b>Work and illness</b> (44% of cancels). The reschedule flow from 15 Oct handles those.</li>
+<li><b>Reach is the unknown.</b> Free accounts used to log in 6-9% of the time with no push. Every message now pushes it, but the real rate is unmeasured.</li>
+<li><b>Some people get one extra text.</b> Confirmed bookers without the app now get their later reminder as an app nudge instead of nothing.</li>
+<li><b>Longer texts.</b> Most reminders are now 2 SMS segments.</li>
+</ul></div>
+</div>
+<div class="card" style="margin-top:16px">
+<p class="k">The arithmetic</p>
+<p style="margin:0 0 12px;color:var(--ink2);line-height:1.5">Lift overall = share who log in x how much more they show. If logging in lifts attendance by 10 points:</p>
+<div class="grid g3">
+<div><b>15% log in</b><div class="bar"><i data-w="15"></i></div><span class="note">+1.5 points overall</span></div>
+<div><b>30% log in</b><div class="bar"><i data-w="30"></i></div><span class="note">+3 points overall</span></div>
+<div><b>50% log in</b><div class="bar"><i data-w="50"></i></div><span class="note">+5 points overall</span></div>
+</div>
+<p class="note" style="margin-top:14px">Expect roughly +1 to +4 points on show rate, plus a likely bigger effect on free session to Kickstart sell-through. People who log in are probably keener anyway, so comparing them to people who don't will overstate it. Read it at least 28 days after the sessions: the share logged in before their session (now tracked per booking), the show rate before vs after go-live, and Kickstart purchases per booking.</p>
+</div>
+</section>
+
+<section id="checked" class="wrap">
+<h2>How it was checked</h2>
+<p class="lede">Built and tested against the live system with test accounts only. No real client was messaged.</p>
+<div class="grid g3" id="checks">
+<div class="tile"><p class="k">Server</p><div class="big">14/14</div><p>pass logic tests: login made from the booking, existing accounts untouched, locks, Confirm writes the same HubSpot fields as the link, moves, Kickstart and gift unlocks, pushes, trainer digest.</p></div>
+<div class="tile"><p class="k">Reminders</p><div class="big">64/64</div><p>reminder tests plus the stress suite: every variant, the confirm gate, segment limits, booking text and email parity. A dry run against today's real bookings picked the right variant for each.</p></div>
+<div class="tile"><p class="k">Kickstart reminders</p><div class="big">52/52</div><p>timing windows, variants, one message a day, re-check before send, ledger, caps, dry run sends nothing.</p></div>
+<div class="tile"><p class="k">Landing pages</p><div class="big">0 errors</div><p>carousel checked on desktop, iPhone and Android: videos load only when reached, one plays at a time, sound works, store badge order follows the phone, no overflow.</p></div>
+<div class="tile"><p class="k">Live journey</p><div class="big">Recorded</div><p>Booking to login to pass to Confirm to Kickstart unlock on the live app (the video above).</p></div>
+<div class="tile"><p class="k">Independent check</p><div class="big" id="haiku-score">11/14</div><p id="haiku-line">A separate Claude Haiku agent walked the whole journey as a fake customer in the browser. 11 of 14 steps passed first time. The 3 failures and the other problems it noticed were fixed or explained (below).</p></div>
+</div>
+<div class="card" style="margin-top:16px">
+<p class="k">What the independent check caught, and what changed</p>
+<table><tbody>
+<tr><td style="width:34%"><b>Spring Kickstart setup showed before the pass</b></td><td>The V2 rule says every new client owes setup. A locked pass now never gets the setup form; it comes with the Kickstart. Re-recorded: welcome, then the session.</td></tr>
+<tr><td><b>The JFI row in Messages did nothing</b></td><td>Any way into JFI (Messages, Training, Home links) now opens the JFI lock.</td></tr>
+<tr><td><b>Welcome video was the Spring film</b></td><td>The in-app welcome film is now the JF Coach version, everywhere it plays.</td></tr>
+<tr><td><b>Gift email didn't arrive</b></td><td>The test helper couldn't run in that container. Sent the same way the Not Interested job sends it: delivered ("No worries, Morgan. A gift from us").</td></tr>
+<tr><td><b>Could someone claim a booker's login?</b></td><td>Checked live: setting a password without the emailed code is refused (403). Pass logins stay unclaimed until the owner proves the inbox.</td></tr>
+</tbody></table>
+</div>
+</section>
+
+<footer>Jamie Fitness · free session app pass · built 17 Oct 2026</footer>
+
+<script>
+const M={
+ book:[["Every booking","<span class='msg'><b>Text:</b> Hi Sam<br>You're booked for a free PT session with Daniel at Snap Hampton on Sun 18 Oct 9:00am. Get JF Coach so your session workout is ready: jamiefitness.au/app Reschedule: 0489 918 170.</span><span class='msg' style='margin-top:8px'><b>Email:</b> ...the usual confirmation, plus:<br>Before your session, get the JF Coach app: https://jamiefitness.au/app/<br>Log in with sam@email.com (we'll email you a code). Your session workout will be waiting, and you can message your trainer.</span>"]],
+ t3:[["Not confirmed, no app","<span class='msg'><b>Subject:</b> Sam, confirm your free session on Sun 18 Oct 9:00am<br>Confirm button, then <b>Get the JF Coach app before your session</b>: \"Your session workout is already in there. Log in with sam@email.com and we'll email you a code.\" + Get JF Coach button.</span>"],["Not confirmed, has the app","<span class='msg'>Confirm button, then \"Your session workout is ready in JF Coach.\"</span>"],["Confirmed, no app","<span class='msg'><b>Subject:</b> Sam, get JF Coach before your session<br>\"You're confirmed... See you there.\" + the app block. No confirm button.</span>"],["Confirmed and has the app","<span class='msg'>Nothing. They're set.</span>"]],
+ t2:[["Not confirmed, no app","<span class='msg'>Hey Sam, still on for Sun 18 Oct 9:00am at Snap Hampton with Daniel? jamiefitness.au/c/AB12CD Reply CONFIRM. Your session workout is in the JF Coach app: jamiefitness.au/app</span>"],["Not confirmed, has the app","<span class='msg'>Hey Sam, still on for Sun 18 Oct 9:00am at Snap Hampton with Daniel? jamiefitness.au/c/AB12CD Reply CONFIRM. Your session workout is ready in JF Coach.</span><span class='note'>+ push: \"Still on for Sun 18 Oct? Tap to confirm.\"</span>"],["Confirmed, no app","<span class='msg'>Hey Sam, you're confirmed for Sun 18 Oct 9:00am at Snap Hampton with Daniel. Get JF Coach before you come in so your session workout is ready: jamiefitness.au/app</span>"],["Confirmed and has the app","<span class='msg'>Nothing.</span>"]],
+ t1:[["Not confirmed, no app","<span class='msg'>Hey Sam, tomorrow Sun 18 Oct 9:00am at Snap Hampton with Daniel. jamiefitness.au/c/AB12CD Reply CONFIRM. Your session workout is waiting in the JF Coach app: jamiefitness.au/app</span>"],["Not confirmed, has the app","<span class='msg'>Hey Sam, tomorrow Sun 18 Oct 9:00am at Snap Hampton with Daniel. jamiefitness.au/c/AB12CD Reply CONFIRM. Your session workout is in JF Coach.</span><span class='note'>+ push to confirm</span>"],["Confirmed, no app","<span class='msg'>Hey Sam, see you tomorrow Sun 18 Oct 9:00am at Snap Hampton with Daniel. Grab JF Coach tonight and log in with the email you booked with: jamiefitness.au/app</span>"],["Confirmed and has the app","<span class='msg'>Nothing (a \"See you at 9:00am\" push about 2 hours before).</span>"]],
+ sd:[["Not confirmed, no app","<span class='msg'>Hey Sam, still on today 9:00am at Snap Hampton with Daniel? jamiefitness.au/c/AB12CD Reply CONFIRM. Your workout's in the JF Coach app: jamiefitness.au/app</span>"],["Not confirmed, has the app","<span class='msg'>Hey Sam, still on today 9:00am at Snap Hampton with Daniel? jamiefitness.au/c/AB12CD Reply CONFIRM</span>"],["Confirmed (either)","<span class='msg'>Nothing on the day.</span>"]]
+};
+const mt=document.getElementById('mt');
+function show(k){mt.innerHTML=M[k].map(([a,b])=>`<tr><td><b>${a}</b></td><td>${b}</td></tr>`).join('');document.querySelectorAll('.tab-row button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.m===k)))}
+document.querySelectorAll('.tab-row button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.m)));show('book');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');e.target.querySelectorAll?.('.bar i').forEach(i=>i.style.width=i.dataset.w+'%');io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.step').forEach((s,i)=>{s.style.transitionDelay=(i*.08)+'s';io.observe(s)});
+document.querySelectorAll('.card').forEach(c=>io.observe(c));
+</script>
+</body>
+</html>
