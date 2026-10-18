@@ -247,7 +247,6 @@ const ICON={
  ok:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.6"/><path d="M8 10.5V7.8a4 4 0 0 1 7.6-1.7"/></svg>',
  gift:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="9" width="17" height="11" rx="2"/><path d="M12 9v11M3.5 13h17M12 9S10 4 7.5 5.5 9 9 12 9zm0 0s2-5 4.5-3.5S15 9 12 9z"/></svg>',
  wait:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'};
-document.body.innerHTML=document.body.innerHTML.replace(/(SMS|MAIL|PUSH|APP|AVA|OK|GIFT|WAIT)_I/g,(m,k)=>ICON[k.toLowerCase()]);
 const C=COPY_JSON;
 const ic=k=>`<span class="ic i-${k}">${ICON[k]}</span>`;
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
