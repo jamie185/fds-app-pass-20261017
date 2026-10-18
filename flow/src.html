@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free session to Kickstart: the whole journey</title>
+<style>
+:root{--ink:var(--foreground,#222326);--sub:var(--muted-foreground,rgba(31,32,37,.6));--card2:var(--card,#EBF0F8);--line:var(--border,#ECEEF2);
+--sms:#4DA3FF;--mail:#8C7CF6;--push:#F5A524;--app:#1FC7A6;--ok:#6DB51F;--off:rgba(128,134,148,.55)}
+*{box-sizing:border-box}
+body{margin:0}
+.w{font-family:var(--font-sans,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif);color:var(--ink);font-weight:500;line-height:1.45;max-width:980px;margin:0 auto}
+h1{font-size:30px;line-height:1.05;letter-spacing:-.03em;font-weight:700;margin:0 0 8px}
+h2{font-size:21px;letter-spacing:-.02em;font-weight:700;margin:34px 0 6px;line-height:1.15}
+h3{font-size:16px;margin:0 0 4px;letter-spacing:-.01em}
+p{margin:0 0 10px}
+.lead{font-size:15.5px;color:var(--sub);max-width:640px}
+.sub{color:var(--sub);font-size:13.5px}
+/* map */
+.map{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:18px 0 4px}
+.stop{background:var(--card2);border-radius:18px;padding:14px 14px 13px;cursor:pointer;border:0;text-align:left;font:inherit;color:inherit;position:relative}
+.stop:hover{filter:brightness(.98)}
+.stop .n{width:26px;height:26px;border-radius:9px;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff;background:#1F2025;margin-bottom:8px}
+.stop b{display:block;font-size:14px;letter-spacing:-.01em;line-height:1.2}
+.stop span{display:block;font-size:12.5px;color:var(--sub);margin-top:4px;line-height:1.35}
+.stop:not(:last-child)::after{content:"";position:absolute;right:-7px;top:26px;width:6px;height:2px;background:var(--line)}
+@media(max-width:720px){.map{grid-template-columns:1fr 1fr}.stop:last-child{grid-column:span 2}.stop::after{display:none}}
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:12px 0 0;font-size:13px;color:var(--sub)}
+.legend i{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:7px;margin-right:6px;vertical-align:-6px}
+.ic{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:9px;flex:0 0 28px}
+.ic svg{width:15px;height:15px}
+.i-sms{background:rgba(77,163,255,.15);color:var(--sms)}.i-mail{background:rgba(140,124,246,.15);color:var(--mail)}
+.i-push{background:rgba(245,165,36,.16);color:var(--push)}.i-app{background:rgba(31,199,166,.15);color:var(--app)}
+.i-ava{background:rgba(31,32,37,.08);color:var(--ink)}
+/* stage */
+.stage{margin-top:16px;background:var(--card2);border-radius:24px;padding:20px;display:grid;grid-template-columns:170px 1fr;gap:20px;scroll-margin-top:12px}
+.stage.noimg{grid-template-columns:1fr}
+.stage .shots{display:flex;flex-direction:column;gap:10px}
+.stage figure{margin:0}
+.stage img{width:170px;border-radius:20px;display:block}
+.stage .cap{font-size:12px;color:var(--sub);text-align:center;margin-top:5px}
+.stage .head{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.stage .head .n{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:14px;font-weight:700;color:#fff;background:#1F2025;flex:0 0 28px;align-self:center}
+.stage .head h2{margin:0}
+.when{font-size:13px;color:var(--sub);font-weight:600}
+.rows{display:flex;flex-direction:column;gap:2px}
+.row{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row .t{font-size:14px}
+.row .t b{font-weight:650}
+.row .t small{display:block;color:var(--sub);font-size:12.5px;margin-top:2px}
+.quote{display:block;margin-top:6px;padding:10px 12px;border-radius:14px;background:var(--background,#fff);font-size:13px;line-height:1.45;white-space:pre-line}
+@media(max-width:720px){.stage{grid-template-columns:1fr}.stage .shots{flex-direction:row;overflow-x:auto}.stage img{width:140px}}
+/* outcome split */
+.split{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.split > div{background:var(--background,#fff);border-radius:18px;padding:14px}
+.split h3{display:flex;align-items:center;gap:8px}
+.split ul{margin:6px 0 0;padding-left:18px;font-size:13.5px}
+.split li{margin:3px 0}
+@media(max-width:720px){.split{grid-template-columns:1fr}}
+/* simulator */
+.sim{margin-top:14px;border-radius:24px;padding:20px;background:var(--card2)}
+.qs{display:flex;flex-wrap:wrap;gap:12px 26px;margin:6px 0 16px}
+.q{font-size:14px;font-weight:600}
+.q .seg{display:inline-flex;margin-left:8px;background:var(--background,#fff);border-radius:12px;padding:3px;vertical-align:middle}
+.seg button{border:0;background:none;font:inherit;font-size:13.5px;font-weight:600;padding:6px 14px;border-radius:9px;cursor:pointer;color:var(--sub)}
+.seg button.on{background:#1F2025;color:#fff}
+.tl{position:relative;padding-left:4px}
+.ev{display:grid;grid-template-columns:118px 28px 1fr;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line)}
+.ev:first-child{border-top:0}
+.ev .d{font-size:13px;font-weight:650;padding-top:4px}
+.ev .d small{display:block;font-weight:500;color:var(--sub);font-size:12px}
+.ev .m{font-size:13.5px}
+.ev .m .k{font-weight:650}
+.ev.skip .m{color:var(--off)}
+.ev.skip .ic{opacity:.35;filter:grayscale(1)}
+.ev .bubble{margin-top:6px;padding:10px 12px;border-radius:16px 16px 16px 4px;background:var(--background,#fff);font-size:13px;line-height:1.45;white-space:pre-line;max-width:520px}
+.ev details{margin-top:6px}
+.ev summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--sub)}
+.ev details .bubble{border-radius:14px}
+.tagline{font-size:13px;color:var(--sub);margin-top:12px}
+@media(max-width:560px){.ev{grid-template-columns:28px 1fr}.ev .d{grid-column:1 / -1;padding:0}}
+/* grids */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.box{background:var(--card2);border-radius:18px;padding:16px}
+.box ul{margin:6px 0 0;padding-left:18px;font-size:13.5px}.box li{margin:4px 0}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}}
+table.m{width:100%;border-collapse:separate;border-spacing:6px;margin:4px -6px 0;font-size:13.5px}
+table.m th{font-size:12.5px;color:var(--sub);font-weight:600;text-align:left;padding:0 4px}
+table.m td{background:var(--background,#fff);border-radius:14px;padding:12px;vertical-align:top}
+table.m td.rh{background:none;font-weight:650;width:110px;padding:12px 4px}
+table.m td b{display:block;font-size:15px;margin-bottom:2px}
+@media(max-width:560px){table.m{font-size:12.5px;border-spacing:4px;margin:4px -4px 0}table.m td{padding:9px}table.m td.rh{width:64px;font-size:12px;padding:9px 2px}}
+.foot{margin-top:30px;font-size:12.5px;color:var(--sub)}
+a{color:inherit}
+</style></head><body><div class="w">
+
+<h1>Free session to Kickstart: the whole journey</h1>
+<p class="lead">What a person sees in the app, which texts and emails they get, and what decides the wording. Example person: <b>Sam</b>, booked with trainer <b>Alex</b> at Mentone on Thursday at 9:00am.</p>
+
+<div class="map">
+  <button class="stop" data-go="s1"><div class="n">1</div><b>Books a free session</b><span>Gets the app link and a login already made</span></button>
+  <button class="stop" data-go="s2"><div class="n">2</div><b>The days before</b><span>3 reminders, worded by what they've done</span></button>
+  <button class="stop" data-go="s3"><div class="n">3</div><b>Session day</b><span>Push 2 hours before. Trainer has the workout</span></button>
+  <button class="stop" data-go="s4"><div class="n">4</div><b>The outcome</b><span>Kickstart, "no thanks", or undecided</span></button>
+  <button class="stop" data-go="s5"><div class="n">5</div><b>Kickstart setup</b><span>Reminders until the setup form is done</span></button>
+</div>
+<div class="legend">
+  <span><i class="ic i-sms">SMS_I</i>Text</span><span><i class="ic i-mail">MAIL_I</i>Email</span><span><i class="ic i-push">PUSH_I</i>App notification</span><span><i class="ic i-app">APP_I</i>In the app</span><span><i class="ic i-ava">AVA_I</i>Ava, to the trainer</span>
+</div>
+
+<!-- 1 -->
+<section class="stage" id="s1">
+  <div class="shots"><figure><img src="IMG/landing-00.webp" alt=""><div class="cap">jamiefitness.au/app</div></figure></div>
+  <div>
+    <div class="head"><div class="n">1</div><h2>Books a free session</h2></div>
+    <p class="when">The moment the booking lands (website, Ava, VA or trainer)</p>
+    <div class="rows">
+      <div class="row"><span class="ic i-sms">SMS_I</span><div class="t"><b>Booking text</b>, same as before plus one line about the app
+        <span class="quote">Hi Sam
+You're booked for a free PT session with Alex at Snap Fitness Mentone on Thu 23 Oct 9:00am. Get JF Coach so your session workout is ready: jamiefitness.au/app Reschedule: 0489 918 170.</span></div></div>
+      <div class="row"><span class="ic i-mail">MAIL_I</span><div class="t"><b>Booking email</b>, with a new paragraph after the opening
+        <span class="quote">Before your session, get the JF Coach app: https://jamiefitness.au/app/
+Log in with sam@email.com (we'll email you a code). Your session workout will be waiting, and you can message your trainer.</span></div></div>
+      <div class="row"><span class="ic i-app">APP_I</span><div class="t"><b>A JF Coach login is made for them</b> on the email they booked with. They tap Log In, get a code, pick a password. No setup form.
+        <small>Already had JF Coach (a Spring entrant or past client)? Nothing changes for them: no locks.</small></div></div>
+      <div class="row"><span class="ic i-app">APP_I</span><div class="t"><b>A starter workout goes in for the session day</b>: full body, labelled "Free session workout".</div></div>
+      <div class="row"><span class="ic i-ava">AVA_I</span><div class="t"><b>Ava tells the trainer</b> in their next work hours that Sam's session workout is in their app and what's in it. The trainer changes it in JF Coach: tap the session in the calendar, then <b>Edit in their app</b>.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="stage" id="s2">
+  <div class="shots"><figure><img src="IMG/app-06-home.webp" alt=""><div class="cap">Home is their session</div></figure><figure><img src="IMG/app-08-home-locks.webp" alt=""><div class="cap">The rest, fogged</div></figure></div>
+  <div>
+    <div class="head"><div class="n">2</div><h2>The days before</h2></div>
+    <p class="when">Same slots as always: email 3 days before, text 2 days before, text the day before, text on the day. 9am to 7pm.</p>
+    <p style="font-size:14px">Two questions pick the wording, checked again right before every send:</p>
+    <table class="m">
+      <tr><th></th><th>Hasn't got the app</th><th>Logged into the app</th></tr>
+      <tr><td class="rh">Hasn't confirmed</td><td><b>A</b>"Still on? Reply CONFIRM" plus the app link</td><td><b>B</b>"Still on? Reply CONFIRM" plus "your workout is ready in JF Coach". Also a tap-to-confirm app notification</td></tr>
+      <tr><td class="rh">Confirmed</td><td><b>C</b>"You're confirmed" plus "get JF Coach before you come in". No text on the day</td><td><b>D</b>Nothing more. Just the "see you at 9:00am" notification</td></tr>
+    </table>
+    <p class="sub" style="margin-top:8px">Nobody gets extra messages: it's the same number of slots, and C and D send fewer. Booked late? They only get the slots still ahead.</p>
+    <div class="rows" style="margin-top:6px">
+      <div class="row"><span class="ic i-app">APP_I</span><div class="t"><b>In the app before the session:</b> their session (with a one-tap confirm and add-to-calendar), the session workout, on-demand workouts, a one-off workout, calendar, messages with the trainer, progress.
+        <small>Locked with "Unlocks at your free session": JFI, food scanner, meal guide, the Challenge, program builder, habits. The first time they open it they see the JF Coach film.</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- simulator 1 -->
+<div class="sim" id="sim1">
+  <h3>Try it: what would Sam get?</h3>
+  <div class="qs">
+    <div class="q">Confirmed?<span class="seg" data-k="conf"><button data-v="0" class="on">No</button><button data-v="1">Yes</button></span></div>
+    <div class="q">Logged into the app?<span class="seg" data-k="app"><button data-v="0" class="on">No</button><button data-v="1">Yes</button></span></div>
+  </div>
+  <div class="tl" id="tl1"></div>
+  <p class="tagline">Confirming or logging in part-way through switches them to the right version from the next message on.</p>
+</div>
+
+<!-- 3 -->
+<section class="stage" id="s3">
+  <div class="shots"><figure><img src="IMG/app-07-home-workout.webp" alt=""><div class="cap">The session workout</div></figure></div>
+  <div>
+    <div class="head"><div class="n">3</div><h2>Session day</h2></div>
+    <div class="rows">
+      <div class="row"><span class="ic i-push">PUSH_I</span><div class="t"><b>About 2 hours before</b>, only if they have the app
+        <span class="quote">See you at 9:00am
+Your free session with Alex is at 9:00am. Your session workout is ready in the app.</span></div></div>
+      <div class="row"><span class="ic i-app">APP_I</span><div class="t"><b>The trainer runs the session</b> from the same workout the client can see on their phone.</div></div>
+      <div class="row"><span class="ic i-app">APP_I</span><div class="t"><b>After the session</b> the locks change to "Unlocks with your Kickstart". Nothing else changes until there's an outcome.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="stage noimg" id="s4">
+  <div>
+    <div class="head"><div class="n">4</div><h2>The outcome</h2></div>
+    <div class="split">
+      <div><h3><span class="ic i-app" style="background:rgba(109,181,31,.15);color:var(--ok)">OK_I</span>Buys the Kickstart</h3>
+        <ul><li>App unlocks by itself</li><li>Notification: "Your app is unlocked. Welcome to your Kickstart, Sam. Open JF Coach to build your program."</li><li>Opening the app: "Your app is unlocked" screen, then <b>Build my program</b> leads into the Kickstart setup form</li><li>Welcome email, app-aware version: "I can see you've already set up JF Coach, so you're one step ahead. Your app is now fully unlocked."</li></ul></div>
+      <div><h3><span class="ic i-push">GIFT_I</span>Says "no thanks"</h3>
+        <ul><li>Deal moved to Not Interested</li><li>Had the app: full JF Coach, free forever. Gift email "Your JF Coach app is now fully unlocked, for good" plus a notification</li><li>Never got the app: the normal Not Interested email, as before</li></ul></div>
+      <div><h3><span class="ic i-ava">WAIT_I</span>Undecided</h3>
+        <ul><li>Stays as it is: session tools open, the rest locked</li><li>This system sends them nothing more</li><li>Didn't show or cancelled? The app stays locked. If they rebook, the reminders start again for the new time</li></ul></div>
+    </div>
+    <p class="sub" style="margin-top:10px">Nobody unlocks an app by hand. Anything odd goes to Gabrielle.</p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="stage" id="s5">
+  <div class="shots"><figure><img src="IMG/app-15-unlocked.webp" alt=""><div class="cap">Kickstart bought</div></figure></div>
+  <div>
+    <div class="head"><div class="n">5</div><h2>Kickstart setup reminders</h2></div>
+    <p class="when">For every Kickstart payer (not only free-session people) until the setup form is done</p>
+    <div class="rows">
+      <div class="row"><span class="ic i-mail">MAIL_I</span><div class="t"><b>Day after paying</b>, email, from 9:30am</div></div>
+      <div class="row"><span class="ic i-mail">MAIL_I</span><div class="t"><b>3 days after that</b>, the last email. Skipped if their first Kickstart session has already happened</div></div>
+      <div class="row"><span class="ic i-sms">SMS_I</span><div class="t"><b>Day before the first Kickstart session</b>, text, from 11am. Only if a session is booked</div></div>
+    </div>
+    <p style="font-size:14px;margin-top:10px">Which version depends on how far they've got:</p>
+    <table class="m">
+      <tr><td class="rh">Not logged in</td><td><b>A</b>Step by step: download, Log In with their email, code, password, setup form</td></tr>
+      <tr><td class="rh">Logged in, no form</td><td><b>B</b>"One step left: the setup form"</td></tr>
+      <tr><td class="rh">Had the app from the free session</td><td><b>P</b>"Your app is unlocked. I can see you already set up JF Coach. The setup form is waiting"</td></tr>
+      <tr><td class="rh">Form done</td><td><b>Nothing</b>They stop the moment the form is in</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- simulator 2 -->
+<div class="sim" id="sim2">
+  <h3>Try it: Sam paid for the Kickstart. What do they get?</h3>
+  <div class="qs">
+    <div class="q">Logged into the app?<span class="seg" data-k="li"><button data-v="0" class="on">No</button><button data-v="1">Yes</button></span></div>
+    <div class="q">Had the app from the free session?<span class="seg" data-k="pass"><button data-v="0" class="on">No</button><button data-v="1">Yes</button></span></div>
+    <div class="q">Setup form done?<span class="seg" data-k="form"><button data-v="0" class="on">No</button><button data-v="1">Yes</button></span></div>
+  </div>
+  <div class="tl" id="tl2"></div>
+</div>
+
+<h2>The rules underneath all of it</h2>
+<div class="grid2">
+  <div class="box"><h3>Never spammy</h3><ul>
+    <li>Every message re-checks the person right before it sends, and stops once they've done the thing</li>
+    <li>The tap-to-confirm notification goes with the text, not on top of it</li>
+    <li>Kickstart: one message a day at most. If a text and an email land on the same day, the text wins</li>
+    <li>A missed day is never made up later</li></ul></div>
+  <div class="box"><h3>Who's left out</h3><ul>
+    <li>Kickstart reminders: refunded, paused, Not Interested, staff and free-challenge sign-ups</li>
+    <li>Kickstart reminders only count people who paid from 17 Oct, 2:24pm. Earlier payers weren't caught up</li>
+    <li>People who had JF Coach before booking never see locks</li></ul></div>
+</div>
+
+<p class="foot">Live since 17 Oct 2026. Full build notes, recordings and the landing page: <a href="../">the team explainer</a>. Off switch: coach-api <code>data/fds-pass.json</code>, <code>"enabled": false</code>.</p>
+
+<script>
+const ICON={
+ sms:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/></svg>',
+ mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>',
+ push:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"/><path d="M10 21h4"/></svg>',
+ app:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg>',
+ ava:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+ ok:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.6"/><path d="M8 10.5V7.8a4 4 0 0 1 7.6-1.7"/></svg>',
+ gift:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="9" width="17" height="11" rx="2"/><path d="M12 9v11M3.5 13h17M12 9S10 4 7.5 5.5 9 9 12 9zm0 0s2-5 4.5-3.5S15 9 12 9z"/></svg>',
+ wait:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'};
+document.body.innerHTML=document.body.innerHTML.replace(/(SMS|MAIL|PUSH|APP|AVA|OK|GIFT|WAIT)_I/g,(m,k)=>ICON[k.toLowerCase()]);
+const C=COPY_JSON;
+const ic=k=>`<span class="ic i-${k}">${ICON[k]}</span>`;
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function ev(day,sub,ch,title,body,opts={}){
+  const inner=opts.skip?`<div class="k">${esc(title)}</div>`:
+   `<div class="k">${esc(title)}</div>`+(body?(opts.fold?`<details><summary>Show the email</summary><div class="bubble">${esc(body)}</div></details>`:`<div class="bubble">${esc(body)}</div>`):'');
+  return `<div class="ev${opts.skip?' skip':''}"><div class="d">${day}<small>${sub}</small></div>${ic(ch)}<div class="m">${inner}</div></div>`;
+}
+const st={conf:0,app:0,li:0,pass:0,form:0};
+function r1(){
+  const v=st.conf?(st.app?'D':'C'):(st.app?'B':'A');
+  const o=[];
+  o.push(ev('Booking','straight away','sms','Booking text, with the app link','Hi Sam\nYou\'re booked for a free PT session with Alex at Snap Fitness Mentone on Thu 23 Oct 9:00am. Get JF Coach so your session workout is ready: jamiefitness.au/app Reschedule: 0489 918 170.'));
+  const e=C.fds['t3_email_'+v];
+  o.push(v==='D'?ev('3 days before','9am-7pm','mail','No email: already confirmed and in the app','',{skip:1}):ev('3 days before','9am-7pm','mail','Email: '+e.subject,e.text,{fold:1}));
+  for(const [s,d,sub] of [['t2_sms','2 days before','9am-7pm'],['t1_sms','1 day before','9am-7pm'],['same_day_sms','Session day','9am-7pm']]){
+    const t=C.fds[s+'_'+v];
+    if(t) o.push(ev(d,sub,'sms','Text ('+v+')',t)); else o.push(ev(d,sub,'sms',v==='D'?'No text: already confirmed and in the app':'No text: already confirmed','',{skip:1}));
+    if(v==='B') o.push(ev('','with the text','push','App notification: "Still on for Thursday?"','Your free session with Alex is Thursday at 9:00am. Tap to confirm you\'re coming.'));
+  }
+  o.push(st.app?ev('2 hours before','7am-9pm','push','App notification: "See you at 9:00am"','Your free session with Alex is at 9:00am. Your session workout is ready in the app.'):ev('2 hours before','','push','No notification: not in the app','',{skip:1}));
+  document.getElementById('tl1').innerHTML=o.join('');
+}
+function r2(){
+  const o=[];
+  if(st.pass && !st.li){st.li=1;sync();}
+  const v=!st.li?'A':(st.pass?'P':'B');
+  o.push(ev('Payment','straight away','mail',st.pass?'Welcome email, app version: "I can see you\'ve already set up JF Coach... Your app is now fully unlocked."':'Welcome email: download JF Coach, log in, do the setup form',''));
+  if(st.pass) o.push(ev('','straight away','push','App notification: "Your app is unlocked"','Welcome to your Kickstart, Sam. Open JF Coach to build your program.'));
+  if(st.form){
+    o.push(ev('Day after','from 9:30am','mail','Nothing: the form is done','',{skip:1}));
+    o.push(ev('Day 4','from 9:30am','mail','Nothing','',{skip:1}));
+    o.push(ev('Day before 1st session','from 11am','sms','Nothing','',{skip:1}));
+  } else {
+    const e1=C.ksp['email1_'+v],e2=C.ksp['email2_'+v];
+    o.push(ev('Day after','from 9:30am','mail','Email ('+v+'): '+e1.subject,e1.text,{fold:1}));
+    o.push(ev('Day 4','from 9:30am','mail','Last email: '+e2.subject,e2.text,{fold:1}));
+    o.push(ev('Day before 1st session','from 11am','sms','Text ('+(v==='A'?'A':'B')+')',C.ksp['sms_'+(v==='A'?'A':'B')]));
+  }
+  document.getElementById('tl2').innerHTML=o.join('');
+}
+function sync(){document.querySelectorAll('.seg').forEach(s=>s.querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.v===st[s.dataset.k])));}
+document.querySelectorAll('.seg').forEach(s=>s.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const k=s.dataset.k;st[k]=+b.dataset.v;if(k==='li'&&!st.li)st.pass=0;sync();r1();r2();}));
+document.querySelectorAll('.stop').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.go).scrollIntoView({behavior:'smooth',block:'start'})));
+r1();r2();
+</script>
+</div></body></html>
